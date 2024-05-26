@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Louay Market</title>
+</head>
+<body>
+    <header>
+        <img src="logo-transparent-png.png" alt="logo" class="logo">   
+        <input type="text" placeholder="   Type here ..." id="recherche"/>
+        <button id="Brecherche" onclick="rechercher()">Search</button>
+        <a href="#" class="Home">Home</a>
+        <a href="#" class="Products">Products</a>
+        <a href="#" class="Panier" onclick="showCart()">Cart</a>
+        <a href="#" class="inscription">Sign up/Log In</a>
+        <button class="Btn">
+            <svg viewBox="0 0 576 512" height="1em" class="logoIcon"><path d="M309 106c11.4-7 19-19.7 19-34c0-22.1-17.9-40-40-40s-40 17.9-40 40c0 14.4 7.6 27 19 34L209.7 220.6c-9.1 18.2-32.7 23.4-48.6 10.7L72 160c5-6.7 8-15 8-24c0-22.1-17.9-40-40-40S0 113.9 0 136s17.9 40 40 40c.2 0 .5 0 .7 0L86.4 427.4c5.5 30.4 32 52.6 63 52.6H426.6c30.9 0 57.4-22.1 63-52.6L535.3 176c.2 0 .5 0 .7 0c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40c0 9 3 17.3 8 24l-89.1 71.3c-15.9 12.7-39.5 7.5-48.6-10.7L309 106z"></path></svg>
+            GO PREMIUM
+          </button>
+    </header>
+    <div class="container" id="productContainer">
+        <div class="product productl1" data-name="PlayStation 5">
+            <img class="Proimg" src="img/ps5.jpg" alt="Product 1">
+            <h2>PlayStation 5</h2>
+            <p>The latest console from Sony, offering stunning 4K graphics and a revolutionary DualSense controller.</p>
+            <button class="button" onclick="addToCart('PlayStation 5')">Add to Cart</button>
+        </div>
+        <div class="product productl1" data-name="Xbox Series X">
+            <img class="Proimg" src="img/xboxseriesx.jpg" alt="Product 2">
+            <h2>Xbox Series X</h2>
+            <p>Microsoft's next-gen console with 4K gaming and a super-fast SSD for quick load times.</p>
+            <button class="button" onclick="addToCart('Xbox Series X')">Add to Cart</button>
+        </div>
+        <div class="product productl1" data-name="Nintendo Switch">
+            <img class="Proimg" src="img/nintendswitch.jpg" alt="Product 3">
+            <h2>Nintendo Switch</h2>
+            <p>A versatile console from Nintendo that can be used as a home console or a portable device.</p>
+            <button class="button" onclick="addToCart('Nintendo Switch')">Add to Cart</button>
+        </div>
+        <div class="product productl2" data-name="Alienware Aurora R11">
+            <img class="Proimg" src="img/alienwareaurora.jpg" alt="Product 4">
+            <h2>Alienware Aurora R11</h2>
+            <p>A powerful gaming PC from Alienware with top-of-the-line performance and futuristic design.</p>
+            <button class="button" onclick="addToCart('Alienware Aurora R11')">Add to Cart</button>
+        </div>
+        <div class="product productl2" data-name="Razer Blade 15">
+            <img class="Proimg" src="img/razerbalde15.jpg" alt="Product 5">
+            <h2>Razer Blade 15</h2>
+            <p>A high-performance gaming laptop from Razer, featuring a sleek design and powerful specs.</p>
+            <button class="button" onclick="addToCart('Razer Blade 15')">Add to Cart</button>
+        </div>
+        <div class="product productl2" data-name="Valve Steam Deck">
+            <img class="Proimg" src="img/valvesteamdeck.jpg" alt="Product 6">
+            <h2>Valve Steam Deck</h2>
+            <p>A portable gaming device from Valve, allowing you to play your favorite PC games on the go.</p>
+            <button class="button" onclick="addToCart('Valve Steam Deck')">Add to Cart</button>
+        </div>
+        <div class="product productl3" data-name="HTC Vive Pro 2">
+            <img class="Proimg" src="img/htcvivepro.jpg" alt="Product 7">
+            <h2>HTC Vive Pro 2</h2>
+            <p>A high-end VR headset offering an immersive virtual reality experience.</p>
+            <button class="button" onclick="addToCart('HTC Vive Pro 2')">Add to Cart</button>
+        </div>
+        <div class="product productl3" data-name="Logitech G Pro X">
+            <img class="Proimg" src="img/logitechgprox.jpg" alt="Product 8">
+            <h2>Logitech G Pro X</h2>
+            <p>A lightweight gaming mouse from Logitech, designed for competitive gaming.</p>
+            <button class="button" onclick="addToCart('Logitech G Pro X')">Add to Cart</button>
+        </div>
+        <div class="product productl3" data-name="Asus ROG Phone 5">
+            <img class="Proimg" src="img/asusrogphoneù.jpg" alt="Product 9">
+            <h2>Asus ROG Phone 5</h2>
+            <p>A gaming smartphone from Asus, featuring a high refresh rate screen and gaming-specific features.</p>
+            <button class="button" onclick="addToCart('Asus ROG Phone 5')">Add to Cart</button>
+        </div>
+        <div class="product productl4" data-name="NVIDIA Shield TV Pro">
+            <img class="Proimg" src="img/nvidiashieldtvpro.jpg" alt="Product 10">
+            <h2>NVIDIA Shield TV Pro</h2>
+            <p>A streaming device from NVIDIA that also allows for high-quality gaming.</p>
+            <button class="button" onclick="addToCart('NVIDIA Shield TV Pro')">Add to Cart</button>
+        </div>
+        <div class="product productl4" data-name="Corsair K95">
+            <img class="Proimg" src="img/corsairgamingk95.jpg" alt="Product 11">
+            <h2>Corsair K95</h2>
+            <p>A mechanical gaming keyboard from Corsair, featuring customizable RGB lighting.</p>
+            <button class="button" onclick="addToCart('Corsair K95')">Add to Cart</button>
+        </div>
+        <div class="product productl4" data-name="Xbox Controller">
+            <img class="Proimg" src="img/xboxcontroller.jpg" alt="Product 12">
+            <h2>Xbox Controller</h2>
+            <p>A high-quality wireless controller for Xbox and PC gaming.</p>
+            <button class="button" onclick="addToCart('Xbox Controller')">Add to Cart</button>
+        </div>
+    </div>
+    <div class="cart-popup" id="cartPopup">
+        <h2>Cart</h2>
+        <ul id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <button onclick="hideCart()">Close</button>
+    </div>
+
+</body>
+</html>
+<style>
+    .Proimg{
+        transform: scale(1);
+        transition: 0.3s ease;
+    }
+    .Proimg:hover{
+        transform: scale(1.1);
+        transition: 0.3s ease;
+    }
+</style>
+
+    <script>
+
+        var buttons = document.querySelectorAll(".button");
+
+        
+        function rechercher() {
+            var input = document.getElementById("recherche").value.toLowerCase();
+            var productContainers = document.getElementById("productContainer").children;
+
+            for (var i = 0; i < productContainers.length; i++) {
+                var product = productContainers[i];
+                var productName = product.getAttribute("data-name").toLowerCase();
+
+                if (productName.includes(input)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            }
+        }
+        let cart = [];
+
+function addToCart(productName) {
+    cart.push(productName);
+    alert(`${productName} has been added to your cart.`);
+}
+
+function showCart() {
+    const cartPopup = document.getElementById('cartPopup');
+    const cartItems = document.getElementById('cartItems');
+    cartItems.innerHTML = ''; // Clear the cart list
+
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        cartItems.appendChild(li);
+    });
+
+    cartPopup.style.display = 'block';
+}
+
+function hideCart() {
+    const cartPopup = document.getElementById('cartPopup');
+    cartPopup.style.display = 'none';
+}
+
+function rechercher() {
+    var input = document.getElementById("recherche").value.toLowerCase();
+    var productContainers = document.getElementById("productContainer").children;
+
+    for (var i = 0; i < productContainers.length; i++) {
+        var product = productContainers[i];
+        var productName = product.getAttribute("data-name").toLowerCase();
+
+        if (productName.includes(input)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    }
+}
+
+document.querySelectorAll('.button').forEach(button => {
+    button.addEventListener('click', () => {
+        const productName = button.parentElement.getAttribute('data-name');
+        addToCart(productName);
+    });
+});
+
+    </script>
+</body>
+</html>
