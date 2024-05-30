@@ -30,18 +30,24 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
+            width: 100%;
         }
         .form-group label {
             margin-bottom: 5px;
             font-weight: bold;
-            width: 100%;
+            width: 80%;
             text-align: left;
         }
-        .form-group input {
+        .form-group input, .form-group select {
             width: 80%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
         }
         .form-group button {
             width: 80%;
@@ -91,15 +97,39 @@
     <h2>Sign Up</h2>
     <div class="form-group">
         <label for="name">Name:</label>
-        <center><input type="text" id="name" placeholder="Enter your name"></center>
+        <input type="text" id="name" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Enter your age">
     </div>
     <div class="form-group">
         <label for="email">Email:</label>
-        <center><input type="email" id="email" placeholder="Enter your email"></center>
+        <input type="email" id="email" placeholder="Enter your email">
     </div>
     <div class="form-group">
         <label for="password">Password:</label>
-        <center><input type="password" id="password" placeholder="Enter your password"></center>
+        <input type="password" id="password" placeholder="Enter your password">
+    </div>
+    <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="preference">Sexe:</label>
+        <select id="preference">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="Radiateur">Radiateur</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="terms">I agree to the terms and conditions:</label><input type="checkbox" id="terms">
+        
     </div>
     <div class="form-group">
         <a href="index.html" class="download-button">Sign Up</a>
@@ -108,45 +138,6 @@
         <span>Already have an account? </span><a href="login.html">Login</a>
     </div>
 </div>
-    <HEAD>
-<TITLE>validation formulaire</TITLE>
-</HEAD>
-<BODY>
-<LABEL>Combien vaut PI ?</LABEL><br>
-<LABEL>3.</LABEL><input type="checkbox" id="rep1"></input>
-<LABEL>3.14</LABEL><input type="checkbox" id="rep2"></input>
-<LABEL>2.15</LABEL><input type="checkbox" id="rep3"></input>
-<button id="validation" >corriger</button>
-<p id="resultat"></p>
 
 </body>
-    <script>
-        var bout=document.getElementById("validation");
-function validation(ev) { //fonction qui vérifie la réponse
- console.log("validation");
- //on associe chaque case à cocher à une variable javascript
- var case1=document.getElementById("rep1");
- var case2=document.getElementById("rep2");
- var case3=document.getElementById("rep3");
-
- //on accède au paragraphe sous le formulaire
- var message=document.getElementById("resultat");
-
- console.log("c1="+case1.checked+"c2="+case2.checked+"c3="+case3.checked);
-//si aucune case n’est cochée afficher un avertissement et sortir
- if (case1.checked==false && case2.checked==false && case3.checked==false) {
- message.innerHTML="Sélectionnez au moins une réponse !!!";
- return;
- }
-
- if (case1.checked==false && case2.checked==true && case3.checked==false) {
- message.innerHTML="vrai!";
- } else {
- message.innerHTML="Faux!";
- }
- return(false);
-}
-//utiliser la fonction validation() quand le bouton est cliqué
-bout.addEventListener("click",validation);
-    </script>
 </html>
