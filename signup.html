@@ -108,6 +108,45 @@
         <span>Already have an account? </span><a href="login.html">Login</a>
     </div>
 </div>
+    <HEAD>
+<TITLE>validation formulaire</TITLE>
+</HEAD>
+<BODY>
+<LABEL>Combien vaut PI ?</LABEL><br>
+<LABEL>3.</LABEL><input type="checkbox" id="rep1"></input>
+<LABEL>3.14</LABEL><input type="checkbox" id="rep2"></input>
+<LABEL>2.15</LABEL><input type="checkbox" id="rep3"></input>
+<button id="validation" >corriger</button>
+<p id="resultat"></p>
 
 </body>
+    <script>
+        var bout=document.getElementById("validation");
+function validation(ev) { //fonction qui vérifie la réponse
+ console.log("validation");
+ //on associe chaque case à cocher à une variable javascript
+ var case1=document.getElementById("rep1");
+ var case2=document.getElementById("rep2");
+ var case3=document.getElementById("rep3");
+
+ //on accède au paragraphe sous le formulaire
+ var message=document.getElementById("resultat");
+
+ console.log("c1="+case1.checked+"c2="+case2.checked+"c3="+case3.checked);
+//si aucune case n’est cochée afficher un avertissement et sortir
+ if (case1.checked==false && case2.checked==false && case3.checked==false) {
+ message.innerHTML="Sélectionnez au moins une réponse !!!";
+ return;
+ }
+
+ if (case1.checked==false && case2.checked==true && case3.checked==false) {
+ message.innerHTML="vrai!";
+ } else {
+ message.innerHTML="Faux!";
+ }
+ return(false);
+}
+//utiliser la fonction validation() quand le bouton est cliqué
+bout.addEventListener("click",validation);
+    </script>
 </html>
